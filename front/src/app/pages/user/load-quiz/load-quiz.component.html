@@ -1,0 +1,53 @@
+<div class="bootstrap-wrapper">
+
+    <div class="container-fluid">
+        <h1 style="color:#7E7467; font-weight: bold;" class="mt20">Available Quizzes</h1>
+        <div class=" mt20">
+            <input class="form-control search-input"
+            type="text"
+            placeholder="search"
+            [(ngModel)]="searchText"
+            >
+        
+        </div>
+        <div class="row mt20" *ngIf="surveys">
+            <div class="col-md-4" *ngFor = "let s of surveys| search: searchText">
+                <mat-card class="mb20">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>
+                            {{s.title}}
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            {{s.category.title}}
+                        </mat-card-subtitle> 
+                    </mat-card-header>
+                          
+                    <mat-card-content>
+                    <p class="truncate">{{s.description}}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button  [routerLink]="'/user-dashboard/user-result/'+s.sid" class="custom-button ml20" >Result</button>
+                        <button mat-raised-button [routerLink]="'/user-dashboard/instructions/'+ s.sid" class="custom-button ml20">Start</button>
+                        <!-- <button mat-button color="accent">
+                        Questions:{{s.numberOfQuestions}}
+                        </button> -->
+                        <button mat-button>
+                        Marks:{{s.maxMarks}}
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+
+            <div class="col-md-12" *ngIf="surveys.length == 0">
+                <mat-card>
+                   <mat-card-content>
+                    <h1>No data in this category</h1>
+                   </mat-card-content> 
+                </mat-card>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,52 @@
+<h1 style="color:#7E7467; font-weight: bold; "class="mt20">Quiz Results of {{ surveyTitle }}</h1>
+
+<mat-card *ngIf="results && results.length > 0">
+    
+    <mat-card-content>
+      <div class="bootstrap-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <table class="table table-bordered text-center">
+                <thead>
+                  <tr>
+                    <!-- <th class="mr20">Survey Id</th> -->
+                    <th class="mr20">User ID</th>
+                    <th class="mr20">Name</th>
+                    <th class="mr20">Questions Attempted</th>
+                    <th class="mr20">Correct Answers</th>
+                    <th class="mr20">Marks Scored</th>
+                    <th class="mr20">Submitted Date</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let result of results">
+                    <!-- <td>{{ result.surveyID }}</td> -->
+                    <td>{{ result.userID }}</td>
+
+                    <td>{{ getUserName(result.userID) }}</td>
+
+                    <td>{{ result.qattempted }}</td>
+                  
+                    <td>{{ result.correctAns }}</td>
+                  
+                    <td>{{ result.marksScored }}</td>
+
+                    <td>{{ result.submitDateTime| date: 'medium' }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <div class="col-md-12" *ngIf="results?.length == 0">
+    <mat-card>
+       <mat-card-content>
+        <h1>No One Has Attempted The Quiz To Show Quiz results</h1>
+       </mat-card-content> 
+    </mat-card>
+  

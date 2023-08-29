@@ -1,0 +1,48 @@
+<div class=" mt20 ml20">
+    <input class="form-control search-input"
+    type="text"
+    placeholder="search"
+    [(ngModel)]="searchText"
+    >
+
+</div>
+
+<mat-card  class="mt10 mr20 ml20"  *ngFor="let s of surveys | search: searchText">
+    
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>
+            {{s.title}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{s.category.title}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{s.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button [routerLink]="'/admin/view-questions/'+ s.sid+'/'+s.title" 
+        mat-raised-button class="custom-button">Questions</button>
+        <button mat-stroked-button  class="ml20">
+            Max Marks:{{s.maxMarks}}
+        </button>
+        <!-- <button mat-stroked-button color="primary" class="ml20">
+            Question Count:{{s.numberOfQuestions}}
+        </button> -->
+        <button [routerLink]="'/admin/survey/'+ s.sid" 
+        mat-raised-button class="custom-button ml20">
+            Update
+        </button>
+        <button [routerLink]="'/admin/view-results/'+ s.sid" 
+        mat-raised-button class="custom-button ml20">
+           Attempts 
+        </button>
+        <button mat-raised-button class="delete-button ml20" (click)="deleteSurvey(s.sid)">
+            Delete</button>
+    </mat-card-actions>  
+</mat-card>
+
+<!-- <div class="container text-center mt20">
+   <button routerLink="/admin/add-survey" mat-raised-button color="primary">Add New Survey</button> 
+</div> -->

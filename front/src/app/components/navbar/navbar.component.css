@@ -1,0 +1,28 @@
+/* .example-spacer {
+    flex: 1 1 auto;
+  } */
+
+ /* Assuming .full-width-toolbar is the class you added to mat-toolbar */
+ .full-width-toolbar {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* styles.css or your custom CSS file */
+
+.flex-container {
+  display: flex;
+  align-items: center; /* Vertical alignment if needed */
+  justify-content: flex-end; /* This moves the content to the right */
+  gap: 200px; /* Adjust the gap between elements as needed */
+}
+
+.mr70{
+  margin-right: 70px;
+}
+
+.mat-primary {
+  background:#181716;
+  
+}

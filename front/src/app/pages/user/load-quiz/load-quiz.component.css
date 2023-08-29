@@ -1,0 +1,24 @@
+.truncate{
+    display:block;
+    white-space: nowrap;
+    width:100%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+
+.example-header-image {
+    background-image: url('/assets/ideas.png');
+    background-size: cover;
+  }
+
+  .custom-button {
+    background-color: #7E7467;
+    color: white; /* Set text color to ensure readability */
+  }
+
+  .search-input {
+    width: 800px; /* Adjust the width as needed */
+    height: 30px;
+}
+
+  

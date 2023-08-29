@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/* @font-face {
+    font-family: 'Dosis';
+    src: url('C:\Users\Dell\Desktop\survey-system\front\src\assets\Dosis-Regular.ttf');
+}
+
+* {
+    font-family: 'Dosis';
+    font-size: large;
+} */
+
+
+html, body { 
+    height: 100%;
+    background:#F4F4F4 }
+
+body { margin: 0; font-family:'Work Sans', Helvetica, Arial, sans-serif;font-weight: normal; }
+.text-center{
+    text-align: center;
+}
+
+.ml20{
+   margin-left: 20px  !important; 
+}
+.mr20{
+    margin-right: 20px  !important; 
+ }
+.mt20{
+    margin-top: 20px  !important; 
+}
+ 
+.mb20{
+    margin-bottom: 20px  !important; 
+}
+
+.ml10{
+    margin-left: 10px  !important; 
+ }
+ .mr10{
+     margin-right: 10px  !important; 
+  }
+ .mt10{
+     margin-top: 10px  !important; 
+ }
+  
+ .mb10{
+     margin-bottom: 10px  !important; 
+ }
+ .mb40{
+    margin-bottom: 40px  !important; 
+}
+.mr40{
+    margin-right: 40px  !important; 
+}
+
+.w-50{
+    width: 50px;;
+}
+
+

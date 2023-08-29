@@ -1,0 +1,19 @@
+.example-header-image{
+    background-image: url("../../../../assets/ideas.png");
+    background-size: cover;
+}
+
+.search-input {
+    width: 600px; 
+    height: 30px;
+}
+
+
+.custom-button {
+    background-color: #7E7467;
+    color: white;
+}
+.delete-button {
+    background-color:#C41A23;
+    color: white; 
+}

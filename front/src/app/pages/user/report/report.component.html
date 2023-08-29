@@ -1,0 +1,60 @@
+<div class="bootstrap-wrapper">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+
+<h1 class="mt20" style="color:#7E7467; font-weight: bold;">My Student Record</h1>
+
+<mat-card *ngIf="results && results.length > 0">
+    
+    <mat-card-content>
+      
+      
+              <table class="table table-bordered text-center">
+                <thead>
+                  <tr>
+                    <th class="mr20">Survey Name</th>
+                    <!-- <th class="mr20">User Id</th> -->
+                    <th class="mr20">Questions Attempted</th>
+                    <th class="mr20">Correct Answers</th>
+                    <th class="mr20">Marks Scored</th>
+                    <th class="mr20">Submitted Date</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let result of results">
+                    <td>{{ getSurveyName(result.surveyID) }}</td>
+                 
+                    <td>{{ result.qattempted }}</td>
+                  
+                    <td>{{ result.correctAns }}</td>
+                  
+                    <td>{{ result.marksScored }}</td>
+
+                    <td>{{ result.submitDateTime| date: 'medium' }}</td>
+                  </tr>
+                </tbody>
+              </table> 
+                   
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="container text-center">
+      
+      <button class="custom-button ml20" mat-raised-button [routerLink]="'/user-dashboard/0'">Home</button>
+      </div>          
+    </mat-card-actions>
+  </mat-card>
+</div>
+</div>
+</div> 
+ 
+
+
+  <div class="col-md-12" *ngIf="results?.length == 0">
+    <mat-card>
+       <mat-card-content>
+        <h1>You Have Not Attempted Any Of The Quizzes Yet!</h1>
+       </mat-card-content> 
+    </mat-card>
+</div>
+

@@ -1,0 +1,65 @@
+<div class="bootstrap-wrapper">
+    
+    <div class="col-md-8 offset-md-2">
+<h1 style="color:#7E7467; font-weight: bold;" class="mt20">Profile Details</h1>
+
+<mat-card *ngIf="user">
+   <!-- <h1>Your Profile Details</h1> -->
+
+   <!-- {{user| json }} -->
+   <mat-card-content>
+
+    
+            <div class="container text-center"> 
+                <img src="https://t4.ftcdn.net/jpg/00/64/67/27/360_F_64672736_U5kpdGs9keUll8CRQ3p3YaEv2M6qkVY5.jpg" 
+                alt=""
+                class="profile-image"
+                />
+
+                <h1 class="mt20">{{user.firstName}} {{user.lastName}}</h1>
+                
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-10 offset-md-1">
+                    <!-- //table Details -->
+                    <table class="table text-center">
+                        <tr>
+                            <td>User Name</td>
+                            <td>{{user.username}}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>{{user.phone}}</td>
+                        </tr>
+                        <tr>
+                            <td>Role</td>
+                            <td>
+                                {{ user.roles.includes('ROLE_ADMIN') ? 'Admin' : (user.roles.includes('ROLE_USER') ? 'User' : user.roles) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td>Active</td>
+                            <!-- {{user.enabled?"ACTIVE" : "NOTACTIVE"}} -->
+                        </tr>
+                    </table>
+                    <!-- Add the GradeBook button for the user -->
+                    <div class="container text-center mt20">
+                        
+                    
+                    <button mat-raised-button class="custom-button" *ngIf="!user.roles.includes('ROLE_ADMIN')" [routerLink]="'/report'">My Student Record</button>
+                    
+                </div>
+                </div>
+            </div>
+        
+   </mat-card-content>
+   <!-- <mat-card-actions class="text-center">
+    <button mat-raised-button color="primary">UPDATE</button>
+    <button mat-raised-button color="accent">SHARE</button>
+</mat-card-actions> -->
+</mat-card>
+</div>
+</div>
