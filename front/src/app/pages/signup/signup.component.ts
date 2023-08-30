@@ -30,7 +30,6 @@ export class SignupComponent {
     //alert('submit');
     console.log(this.user);
     if(this.user.username =='' || this.user.username == null){
-      //alert('User is required!!');
       this.snack.open('Username is required!!','',{
         duration:3000,
       })
@@ -39,7 +38,6 @@ export class SignupComponent {
     }
 
     if(this.user.password =='' || this.user.password == null){
-      //alert('User is required!!');
       this.snack.open('Password is required!!','',{
         duration:3000,
       })
@@ -83,22 +81,37 @@ export class SignupComponent {
       return;
   }
 
-  if (this.user.phone === '' || this.user.phone === null) {
-    this.snack.open('Phone number is required!!', '', {
-        duration: 3000,
-    });
-    return;
-  }
+//   if (this.user.phone === '' || this.user.phone === null) {
+//     this.snack.open('Phone number is required!!', '', {
+//         duration: 3000,
+//     });
+//     return;
+//   }
 
 // // Check if phone number has maximum 10 digits
 // //const phoneNumber = this.user.phone.toString();
+// if (this.user.phone.length < 10) {
+//   console.log(this.user.phone.length);
+//     this.snack.open('Phone number should have a maximum of 10 digits!', '', {
+//         duration: 3000,
+//     });
+//     return;
+//   }
+
+
+if (this.user.phone === '' || this.user.phone === null) {
+  this.snack.open('Phone number is required!!', '', {
+      duration: 3000,
+  });
+  return;
+}
+
 if (this.user.phone.length < 10) {
-  console.log(this.user.phone.length);
-    this.snack.open('Phone number should have a maximum of 10 digits!', '', {
-        duration: 3000,
-    });
-    return;
-  }
+  this.snack.open('Phone number should have a minimum of 10 digits!', '', {
+      duration: 3000,
+  });
+  return;
+}
 
 
     
