@@ -81,24 +81,6 @@ export class SignupComponent {
       return;
   }
 
-//   if (this.user.phone === '' || this.user.phone === null) {
-//     this.snack.open('Phone number is required!!', '', {
-//         duration: 3000,
-//     });
-//     return;
-//   }
-
-// // Check if phone number has maximum 10 digits
-// //const phoneNumber = this.user.phone.toString();
-// if (this.user.phone.length < 10) {
-//   console.log(this.user.phone.length);
-//     this.snack.open('Phone number should have a maximum of 10 digits!', '', {
-//         duration: 3000,
-//     });
-//     return;
-//   }
-
-
 if (this.user.phone === '' || this.user.phone === null) {
   this.snack.open('Phone number is required!!', '', {
       duration: 3000,
@@ -113,8 +95,7 @@ if (this.user.phone.length < 10) {
   return;
 }
 
-
-    
+  
     //addUser: userservice
     this.userService.addUser(this.user).subscribe(
     

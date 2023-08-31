@@ -17,7 +17,7 @@ export class AddQuestionComponent implements OnInit {
   sid:any;
   sTitle:any;
   numQuestionsAdded: number = 0;
-  //numberOfQuestions:any;
+  
   question={
     survey:{},
     quesId:'',
@@ -39,7 +39,7 @@ export class AddQuestionComponent implements OnInit {
       this.sid=this._route.snapshot.params['sId'];
       this.sTitle=this._route.snapshot.params['title'];
       console.log(this.sid);
-      //this.question.survey['sid']=this.sid;
+      
       (this.question.survey as any)['sid'] = this.sid; // Cast 'survey' to 'any'
   }
 

@@ -15,7 +15,7 @@ export class LoadQuizComponent implements OnInit {
  
   constructor(
     private _route:ActivatedRoute,
-    private _survey:SurveyService,
+    private surveyService:SurveyService,
   ){}
 
   ngOnInit(): void {
@@ -26,7 +26,7 @@ export class LoadQuizComponent implements OnInit {
         if(this.catId==0)
       {
         console.log("Load all the quizzes");
-        this._survey.getActiveSurveys().subscribe(
+        this.surveyService.getActiveSurveys().subscribe(
           (data:any)=>{
             this.surveys=data;
             console.log(this.surveys);
@@ -38,7 +38,7 @@ export class LoadQuizComponent implements OnInit {
         );
       }else{
         console.log("Load Specific quiz");
-        this._survey.getActiveSurveysOfCategory(this.catId).subscribe(
+        this.surveyService.getActiveSurveysOfCategory(this.catId).subscribe(
           (data:any)=>{
             this.surveys=data;
             console.log(this.surveys);

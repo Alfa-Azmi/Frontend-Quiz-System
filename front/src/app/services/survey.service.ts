@@ -10,12 +10,10 @@ export class SurveyService {
   constructor(private _http:HttpClient) { }
 
 
-
   public surveys() {
     return this._http.get(`${this.baseUrl}/survey/`);
   }
 
-  //survey:any;
   //add survey
   public addSurvey(survey:any){
     return this._http.post(`${this.baseUrl}/survey/`,survey)

@@ -1,14 +1,12 @@
 <div class="bootstrap-wrapper">
   <div class="row">
-    <div class="col-md-8 offset-md-2">
+  <div class="col-md-8 offset-md-2">
 
 <h1 class="mt20" style="color:#7E7467; font-weight: bold;">My Student Record</h1>
 
 <mat-card *ngIf="results && results.length > 0">
     
     <mat-card-content>
-      
-      
               <table class="table table-bordered text-center">
                 <thead>
                   <tr>
@@ -23,6 +21,8 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let result of results">
+                    <ng-container  *ngIf="activeSurveyIDs.includes(result.surveyID)">
+
                     <td>{{ getSurveyName(result.surveyID) }}</td>
                  
                     <td>{{ result.qattempted }}</td>
@@ -32,10 +32,10 @@
                     <td>{{ result.marksScored }}</td>
 
                     <td>{{ result.submitDateTime| date: 'medium' }}</td>
+                    </ng-container>
                   </tr>
                 </tbody>
-              </table> 
-                   
+              </table>          
     </mat-card-content>
     <mat-card-actions>
       <div class="container text-center">
@@ -48,13 +48,11 @@
 </div>
 </div> 
  
-
-
-  <div class="col-md-12" *ngIf="results?.length == 0">
-    <mat-card>
-       <mat-card-content>
-        <h1>You Have Not Attempted Any Of The Quizzes Yet!</h1>
-       </mat-card-content> 
-    </mat-card>
+<div class="col-md-12" *ngIf="results?.length == 0">
+  <mat-card>
+      <mat-card-content>
+      <h1>You Have Not Attempted Any Of The Quizzes Yet!</h1>
+      </mat-card-content> 
+  </mat-card>
 </div>
 

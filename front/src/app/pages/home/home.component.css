@@ -5,9 +5,46 @@
     height: 645px;
 }
 
-.description {
-    font-size: 18px;
-    margin-top: 20px;
+.welcome-text {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
+
+.description {
+    color: #777;
+    font-size: 1.2rem;
+}
+
+.feature-card {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+}
+
+.feature-image {
+    max-width: 100%;
+    height: auto;
+    
+}
+
+.feature-title {
+    font-size: 1.8rem;
+    margin-top: 15px;
+}
+
+.feature-description {
+    color: #555;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
 
 

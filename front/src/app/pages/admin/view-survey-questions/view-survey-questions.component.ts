@@ -78,14 +78,7 @@ export class ViewSurveyQuestionsComponent implements OnInit {
           }
           );
       }
-    });
-
-    
-  }
-
-  // updateQuestion(quesId: any) {
-  //   this._router.navigate(['/admin/update-question/', quesId]);
-  // }
-  
+    });  
+  } 
 
 }

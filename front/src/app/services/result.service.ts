@@ -19,16 +19,10 @@ export class ResultService {
     return this._http.post(`${this.baseUrl}/result/`,results);
   }
 
-
   //getting result by survey
   public getResultBySurvey(surveyID:any){
     return this._http.get(`${this.baseUrl}/result/survey/${surveyID}`);
   }
-
-  // //getting result by survey
-  // public getResultByUser(userID:any): Observable<ResultRequest[]>{
-  //   return this._http.get<ResultRequest[]>(`${baseUrl}/result/user/${userID}`);
-  // }
 
   //getting result by user
   public getResultByUser(userID:any){
@@ -38,6 +32,4 @@ export class ResultService {
   public getResultByUserIDAndSurveyID(userID:any,surveyID:any){
     return this._http.get(`${this.baseUrl}/result/${userID}/${surveyID}`);
   }
-
-
 }

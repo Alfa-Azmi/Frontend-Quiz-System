@@ -44,6 +44,10 @@ body { margin: 0; font-family:'Work Sans', Helvetica, Arial, sans-serif;font-wei
  .mt10{
      margin-top: 10px  !important; 
  }
+
+ .mt50{
+    margin-top: 50px  !important; 
+}
   
  .mb10{
      margin-bottom: 10px  !important; 

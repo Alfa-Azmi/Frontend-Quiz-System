@@ -1,8 +1,8 @@
 .full-width{
-  width: 100%;  
+  width: 90%;  
 }
 
-.custom-button {
+.bootstrap-wrapper .custom-button {
   background-color: #7E7467;
-  color: white; 
+  color: white;
 }

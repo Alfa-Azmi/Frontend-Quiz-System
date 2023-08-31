@@ -20,8 +20,6 @@ export class QuestionService {
     return this._http.get(`${this.baseUrl}/question/survey/${sId}`);
 
   }
-
-  
   //add question
   public addQuestion(question:any){
     return this._http.post(`${this.baseUrl}/question/`,question);

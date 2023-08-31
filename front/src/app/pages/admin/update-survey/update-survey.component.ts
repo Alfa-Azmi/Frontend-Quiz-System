@@ -28,7 +28,6 @@ export class UpdateSurveyComponent implements OnInit {
   ngOnInit(): void {
 
       this.sid =this._route.snapshot.params['sId'];
-      //alert(this.sid);
       this.surveyService.getSurvey(this.sid).subscribe(
         (data:any)=>{
          this.survey=data;

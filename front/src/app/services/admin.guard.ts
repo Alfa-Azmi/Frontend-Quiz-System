@@ -1,11 +1,3 @@
-// import { CanActivateFn, Router } from '@angular/router';
-
-// export const adminGuard: CanActivateFn = (route, state) => {
-  
-//   return true;
-// };
-
-
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
@@ -18,7 +10,6 @@ export class adminGuard implements CanActivate {
   constructor(private loginService: LoginService, private router: Router) {}
 
   canActivate(): boolean {
-    // if (this.loginService.isLoggedIn()) {
       const user = this.loginService.getUser();
       if (user && user.roles.includes('ROLE_ADMIN')) {
         // Check if the user has the required role (e.g., 'ROLE_ADMIN')
@@ -27,10 +18,7 @@ export class adminGuard implements CanActivate {
         this.router.navigate(['']); // Redirect to unauthorized page
         return false;
       }
-    // } else {
-    //   this.router.navigate(['login']); // Redirect to the login page
-    //   return false;
-    // }
+    
   }
 }
 

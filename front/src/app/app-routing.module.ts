@@ -17,8 +17,6 @@ import { AddQuestionComponent } from './pages/admin/add-question/add-question.co
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartComponent } from './pages/user/start/start.component';
-//import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
-//import { adminGuard } from './services/admin.guard';
 import { adminGuard } from './services/admin.guard';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { UserResultComponent } from './pages/user/user-result/user-result.component';
@@ -58,10 +56,7 @@ const routes: Routes = [
         path:'',
         component:WelcomeComponent,
       },
-      // {
-      //   path:'profile',
-      //   component:ProfileComponent,
-      // },
+      
       { 
         path:'categories',
         component:ViewCategoriesComponent,

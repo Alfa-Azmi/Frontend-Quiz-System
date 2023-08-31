@@ -14,14 +14,11 @@ export class ReportComponent implements OnInit{
   results: any;
   userID: any;
   surveyID: any;
-  
   survey: any;
-  
-
-  //surveyList = [];
   surveyList: { sid: any, title: string }[] = [];
-  
-  //surveyList = [];
+
+  //To get the IDs of active surveys
+  activeSurveyIDs: number[] = [];
 
   constructor(
     private resultService:ResultService,
@@ -57,9 +54,17 @@ export class ReportComponent implements OnInit{
       console.log(data);
       this.surveyList = data;
     
-    })
-    
-    
+    });
+
+    this.surveyService.getActiveSurveys().subscribe(
+      (data: any) => {
+        this.activeSurveyIDs = data.map((survey: any) => survey.sid);
+      },
+      (error) => {
+        console.error("Error fetching active surveys:", error);
+      }
+    );
+      
   }
 
   getSurveyName(surveyID: any) {
@@ -67,9 +72,7 @@ export class ReportComponent implements OnInit{
     const foundSurvey = this.surveyList.find(item => item.sid === surveyID);
     console.log('Found Survey:', foundSurvey);
     return foundSurvey ? foundSurvey.title : 'Unknown Survey';
-  }
-
-  
+  } 
       
 }
 

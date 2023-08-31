@@ -1,49 +1,42 @@
-<div class="bootstrap-wrapper">
-   
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                
-                <mat-card class="mt20">
-
-                    <mat-card-content>
-                <div class="container text-center">
-                    <img src="../../../assets/logo.png" alt="" width="100" height="100">
-                </div>
-
-                <h1 class="text-center">Login Here!</h1>
-
-               
-                <form (ngSubmit)="formSubmit()">
-                    <!-- username field -->
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>User Name</mat-label>
-                        <input
-                        [(ngModel)]="loginData.username"
-                        name="username"
-                        required
-                        matInput placeholder="Enter here"
-                        />
-                      </mat-form-field>
-
-
-                    <!-- Password field -->
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>User Password</mat-label>
-                        <input
-                        [(ngModel)]="loginData.password"
-                        name="password"
-                        type="password"
-                        required
-                        matInput placeholder="Enter here"
-                        />
-                      </mat-form-field>
-
-                    <div class="container text-center">
-                        <button type="submit" mat-raised-button class="custom-button">Login</button>    
-                      </div>
-                </form>
-            </mat-card-content>
-            </mat-card>
+<div class="bootstrap-wrapper root">
+    <div class="text-center container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <mat-card style="margin-top: 20px">
+            <div class="container text-center">
+                <img src="../../../assets/logo.png" alt="" width="100" height="100">
             </div>
+            <h1 class="text-center">Login Here!</h1>       
+            <form (ngSubmit)="formSubmit()">
+                <!-- username field -->
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>User Name</mat-label>
+                    <input
+                    [(ngModel)]="loginData.username"
+                    name="username"
+                    required
+                    matInput placeholder="Enter here"
+                    />
+                  </mat-form-field>
+
+                <!-- Password field -->
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>User Password</mat-label>
+                    <input
+                    [(ngModel)]="loginData.password"
+                    name="password"
+                    type="password"
+                    required
+                    matInput placeholder="Enter here"
+                    />
+                  </mat-form-field>
+
+                <div class="text-center mb20">
+                    <button class="custom-button" type="submit" mat-raised-button>Login</button>    
+                  </div>
+            </form>
+          </mat-card>
         </div>
+      </div>
     </div>
+  </div>

@@ -13,11 +13,11 @@
 
   .custom-button {
     background-color: #7E7467;
-    color: white; /* Set text color to ensure readability */
+    color: white; 
   }
 
   .search-input {
-    width: 800px; /* Adjust the width as needed */
+    width: 800px;
     height: 30px;
 }
 

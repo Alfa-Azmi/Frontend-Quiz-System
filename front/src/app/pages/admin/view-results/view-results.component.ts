@@ -70,8 +70,4 @@ export class ViewResultsComponent implements OnInit {
     console.log('Found Survey:', foundUser);
     return foundUser ? foundUser.firstName + " " + foundUser.lastName : 'Unknown User';
   }
-
-  
-  
-
 }

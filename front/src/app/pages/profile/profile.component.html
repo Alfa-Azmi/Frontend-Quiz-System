@@ -8,13 +8,10 @@
 
    <!-- {{user| json }} -->
    <mat-card-content>
-
-    
             <div class="container text-center"> 
                 <img src="https://t4.ftcdn.net/jpg/00/64/67/27/360_F_64672736_U5kpdGs9keUll8CRQ3p3YaEv2M6qkVY5.jpg" 
                 alt=""
-                class="profile-image"
-                />
+                class="profile-image"/>
 
                 <h1 class="mt20">{{user.firstName}} {{user.lastName}}</h1>
                 
@@ -42,24 +39,16 @@
                         <tr>
                             <td>Status</td>
                             <td>Active</td>
-                            <!-- {{user.enabled?"ACTIVE" : "NOTACTIVE"}} -->
                         </tr>
                     </table>
                     <!-- Add the GradeBook button for the user -->
                     <div class="container text-center mt20">
-                        
-                    
                     <button mat-raised-button class="custom-button" *ngIf="!user.roles.includes('ROLE_ADMIN')" [routerLink]="'/report'">My Student Record</button>
-                    
+
                 </div>
                 </div>
             </div>
-        
    </mat-card-content>
-   <!-- <mat-card-actions class="text-center">
-    <button mat-raised-button color="primary">UPDATE</button>
-    <button mat-raised-button color="accent">SHARE</button>
-</mat-card-actions> -->
 </mat-card>
 </div>
 </div>

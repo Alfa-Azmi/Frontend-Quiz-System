@@ -36,9 +36,6 @@ export class LoginService {
   // Get user details from local storage
   public getUser() {
     let userString = localStorage.getItem('user');
-    //return userString ? JSON.parse(userString) : null;
-
-    //let userStr = localStorage.getItem("user");
   if(userString!=null)
   {
       return JSON.parse(userString);
@@ -51,7 +48,6 @@ export class LoginService {
     //isLogin:user is logged in or not
    public isLoggedIn(){
     let tokenStr=localStorage.getItem('accessToken');
-    //this.loginStatusSubject.next(true);
     if(tokenStr==undefined || tokenStr == '' || tokenStr == null)
     {
       return false;

@@ -17,7 +17,6 @@ export class AddCategoryComponent  {
     ){}
 
     category={
-      //cid:'',
       title:'',
       description:'',
   
@@ -36,7 +35,6 @@ export class AddCategoryComponent  {
       //all done
       this.categoryService.addCategory(this.category).subscribe(
         (data:any)=>{
-          //this.category.cid='';
           this.category.title='';
           this.category.description='';
           Swal.fire('success!!','Category is added successfully','success');

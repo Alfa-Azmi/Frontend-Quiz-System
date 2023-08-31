@@ -43,12 +43,6 @@ export class ViewSurveysComponent implements OnInit{
   
   }
 
-// searchByKeyword(searchkeyword:any){
-// console.log(searchkeyword);
-// this.surveys=[];
-// }
-
-
   //delete survey
   deleteSurvey(sid:any){
     Swal.fire({

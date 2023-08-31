@@ -10,7 +10,6 @@
               <table class="table table-bordered text-center">
                 <thead>
                   <tr>
-                    <!-- <th class="mr20">Survey Id</th> -->
                     <th class="mr20">User ID</th>
                     <th class="mr20">Name</th>
                     <th class="mr20">Questions Attempted</th>
@@ -22,7 +21,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let result of results">
-                    <!-- <td>{{ result.surveyID }}</td> -->
+                    
                     <td>{{ result.userID }}</td>
 
                     <td>{{ getUserName(result.userID) }}</td>

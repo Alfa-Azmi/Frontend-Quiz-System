@@ -21,12 +21,9 @@ export class UpdateQuestionComponent implements OnInit {
   quesId=0;
   question: any;
   surveys:any;
-  
-  
 
   ngOnInit(): void {
     this.quesId =this._route.snapshot.params['quesId'];
-    //alert(this.quesId);
     this.questionService.getQuestion(this.quesId).subscribe(
       (data:any)=>{
        this.question=data;
@@ -44,19 +41,12 @@ export class UpdateQuestionComponent implements OnInit {
     });
 }
   
-  
-
   //update form submit
   public updateData(){
 
     //validate
     this.questionService.updateQuestion(this.question).subscribe((data)=>{
       Swal.fire("Success!!",'question updated','success');
-      // .then((e)=>{
-      //  this._router.navigate(['/admin/view-questions/:sId/:title']);
-      // }
-      // );
-  
     },(error)=>{
       Swal.fire("Error!!",'error in updating question','error');
       console.log(error);

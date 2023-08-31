@@ -35,9 +35,6 @@ export class UserResultComponent implements OnInit {
       this.userID = user.id;
 
       // Retrieve survey ID from route parameters
-
-      //this.sTitle = this.route.snapshot.params['title'];
-
       this.route.params.subscribe(params => {
         this.surveyID = +params['sId']; // Use 'sId' here
         
@@ -66,8 +63,5 @@ export class UserResultComponent implements OnInit {
     console.log(this.surveyTitle);
     })
   }
-
-
-
 
 }

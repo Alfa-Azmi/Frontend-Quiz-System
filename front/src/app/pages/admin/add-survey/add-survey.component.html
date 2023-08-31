@@ -43,18 +43,7 @@
                                 matInput/>
                             </mat-form-field>
                         </div>
-                        <!-- <div class="col-md-6">
-                            <!-- number of question to be shown -->
-                            <!-- <mat-form-field class="w100" appearance="fill">
-                                <mat-label>Number Of Questions</mat-label>
-                                <input 
-                                [(ngModel)]="surveyData.numberOfQuestions"
-                                type="text" 
-                                name="numberOfQuestions" 
-                                placeholder="Enter Here" 
-                                matInput/>
-                            </mat-form-field>
-                        </div> --> 
+                        
                     </div>
                     <!-- Active Feild -->
                     <!-- <mat-slide-toggle>Slide me!</mat-slide-toggle> -->
@@ -71,7 +60,7 @@
                  
                     <mat-form-field appearance="fill" class="mt20 w100">
                     <mat-label>Categories</mat-label>
-                    <mat-select name="category" [(ngModel)]="surveyData.category.cid">
+                    <mat-select name="category" required [(ngModel)]="surveyData.category.cid">
                     <mat-option *ngFor="let c of categories" [value]="c.cid">
                     {{c.title}}
                     </mat-option>

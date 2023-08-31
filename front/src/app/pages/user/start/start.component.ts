@@ -16,9 +16,7 @@ export class StartComponent implements OnInit {
   sId:any;
   questions:any;
   q: any;
-
-  
-  
+ 
   marksGot=0;
   correctAnswers=0;
   attempted=0;
@@ -30,9 +28,9 @@ export class StartComponent implements OnInit {
   constructor(
     private locationSt:LocationStrategy,
     private _route:ActivatedRoute,
-    private _question:QuestionService,
-    private _user:UserService,
-    private _survey: SurveyService,
+    private questionService:QuestionService,
+    private userService:UserService,
+    private surveyService: SurveyService,
   ){}
 
 
@@ -40,24 +38,15 @@ export class StartComponent implements OnInit {
       this.preventBackButton();
       this.sId=this._route.snapshot.params['sId'];
       console.log(this.sId);
-      this.loadQuestions();
-
-      
-      
+      this.loadQuestions();    
   }
   loadQuestions() {
-    this._question
+    this.questionService
     .getQuestionsOfSurveyForTest(this.sId)
     .subscribe(
       (data:any)=>{
-        //console.log(data);
         this.questions=data;
         this.timer = this.questions.length * 2 * 60;
-        // this.questions=data.map((q:any)=>({
-        //   ...q,
-        //   givenAnswer:null
-        // })
-        // ) ;
         console.log(this.questions);
         this.startTimer();
 
@@ -115,10 +104,9 @@ export class StartComponent implements OnInit {
 
       evalSurvey(){
         //call to server to check questions
-        this._question.evalSurvey(this.questions).subscribe(
+        this.questionService.evalSurvey(this.questions).subscribe(
           (data:any)=>{
             console.log(data);
-            //this.marksGot=data.marksGot;
             this.marksGot=parseFloat(Number(data.marksGot).toFixed(2));
             this.correctAnswers=data.correctAnswers;
             this.attempted=data.attempted;
@@ -128,35 +116,8 @@ export class StartComponent implements OnInit {
             console.log(error);
           }
         )
-        //   surveyID = this.localStorage()
-        // result:Result
-      }
-
-
-
-
         
-        // this.isSubmit=true;
-        // // console.log(this.questions);
-        // this.questions.forEach((q: any)=>{
-        //  if(q.givenAnswer==q.answer)
-        //  {
-        //    this.correctAnswers++
-        //    let marksSingle =this.questions[0].survey.maxMarks/this.questions.length;
-        //    this.marksGot += marksSingle;
-        //  }
-        //  if (q.givenAnswer !== null && q.givenAnswer.trim() !== '')
-        //  {
-        //    this.attempted++;
-        //  }
-
-        // });
-        //  console.log("Correct Answers : "+ this.correctAnswers);
-        //  console.log('Marks Got ' + this.marksGot);
-        //  console.log('attempted '+this.attempted);
-        //  console.log(this.questions);
-       //}
-
+      }  
       printPage(){
         window.print();
       }
