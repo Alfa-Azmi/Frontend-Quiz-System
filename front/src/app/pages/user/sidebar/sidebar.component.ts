@@ -12,12 +12,12 @@ export class SidebarComponent implements OnInit{
   categories:any;
 
   constructor(
-  private _cat:CategoryService,
+  private categoryService:CategoryService,
   private _snack:MatSnackBar 
   ){}
 
 ngOnInit(): void {
-    this._cat.categories().subscribe((data:any)=>{
+    this.categoryService.categories().subscribe((data:any)=>{
         this.categories=data;
       },
       (error)=>{

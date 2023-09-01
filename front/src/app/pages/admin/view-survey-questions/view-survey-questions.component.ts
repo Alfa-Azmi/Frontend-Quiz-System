@@ -30,7 +30,7 @@ export class ViewSurveyQuestionsComponent implements OnInit {
   ];
   constructor(
     private _route:ActivatedRoute,
-    private _question:QuestionService,
+    private questionService:QuestionService,
     private _snack:MatSnackBar,
     private _router: Router
   ){}
@@ -41,7 +41,7 @@ export class ViewSurveyQuestionsComponent implements OnInit {
     console.log(this.sid);
     console.log(this.sTitle);
 
-    this._question.getQuestionsOfSurvey(this.sid).subscribe((data:any)=>{
+    this.questionService.getQuestionsOfSurvey(this.sid).subscribe((data:any)=>{
       console.log(data);
       this.questions=data;
     },(error)=>{
@@ -63,7 +63,7 @@ export class ViewSurveyQuestionsComponent implements OnInit {
 
       if(result.isConfirmed){
         //confirm
-        this._question.deleteQuestion(sId).subscribe(
+        this.questionService.deleteQuestion(sId).subscribe(
           (data)=>{
             this._snack.open('Question Deleted ','',{
               duration:3000,

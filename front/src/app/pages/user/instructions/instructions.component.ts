@@ -16,8 +16,8 @@ export class InstructionsComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
-    private _survey: SurveyService,
-    private _resultService: ResultService, // Inject the ResultService
+    private surveyService: SurveyService,
+    private resultService: ResultService, // Inject the ResultService
     private _router: Router,
   ) {}
 
@@ -30,14 +30,14 @@ export class InstructionsComponent implements OnInit {
       this.userID = user.id;
 
       // Check if the user has already attempted the quiz
-      this._resultService.getResultByUserIDAndSurveyID(this.userID, this.sId).subscribe(
+      this.resultService.getResultByUserIDAndSurveyID(this.userID, this.sId).subscribe(
         (data: any) => {
           if (data.length > 0) {
             Swal.fire('Already Attempted', 'You have already taken this quiz', 'warning');
             this._router.navigate(['user-dashboard/0']); // Redirect to home or appropriate page
           } else {
             // User has not attempted the quiz, fetch survey details
-            this._survey.getSurvey(this.sId).subscribe(
+            this.surveyService.getSurvey(this.sId).subscribe(
               (surveyData: any) => {
                 this.survey = surveyData;
               },

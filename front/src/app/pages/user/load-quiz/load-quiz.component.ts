@@ -12,6 +12,7 @@ export class LoadQuizComponent implements OnInit {
   catId:any;
   surveys:any;
   searchText='';
+  keyword = '';
  
   constructor(
     private _route:ActivatedRoute,
@@ -48,8 +49,27 @@ export class LoadQuizComponent implements OnInit {
           }  
         );
       }
-      });
-      
+      });   
   }
+
+  // performSearch() {
+  //   // Perform search on all surveys
+  //    if (this.keyword.trim() === '') {
+  //      // If the keyword is empty, load all surveys based on catId
+  //      this.surveyService.getActiveSurveysOfCategory(this.catId);
+  //    } else {
+  //      //Otherwise, perform the search
+  //      this.surveyService.searchSurveys(this.keyword).subscribe(
+  //        (data: any) => {
+  //          this.surveys = data;
+  //          console.log(this.surveys);
+  //        },
+  //        (error) => {
+  //          console.log(error);
+  //          alert("Error in searching surveys");
+  //        }
+  //      );
+  //    }
+  //  }
 
 }

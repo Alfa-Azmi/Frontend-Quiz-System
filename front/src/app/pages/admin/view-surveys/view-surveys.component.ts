@@ -24,13 +24,13 @@ export class ViewSurveysComponent implements OnInit{
     },
     ];
 
-    searchText='';
-  constructor(private _survey:SurveyService,
-     private _question:QuestionService){}
+    keyword='';
+  constructor(private surveyService:SurveyService,
+     private questionService:QuestionService){}
 
   
   ngOnInit(): void {
-    this._survey.surveys().subscribe(
+    this.surveyService.surveys().subscribe(
     (data:any)=>{
       this.surveys=data;
       console.log(this.surveys);
@@ -53,7 +53,7 @@ export class ViewSurveysComponent implements OnInit{
     }).then((result)=>{
       if(result.isConfirmed){
         //delete
-        this._survey.deleteSurvey(sid).subscribe(
+        this.surveyService.deleteSurvey(sid).subscribe(
           (data)=>{
             this.surveys = this.surveys.filter((survey)=>survey.sid!=sid);
             Swal.fire('Success','Survey Deleted!','success');
@@ -66,5 +66,19 @@ export class ViewSurveysComponent implements OnInit{
     );
   }
 
-  }
+
+performSearch(){
+  this.surveyService.searchSurveys(this.keyword).subscribe(
+    (data: any) => {
+      this.surveys = data;
+      console.log(this.surveys);
+    },
+    (error) => {
+      console.log(error);
+      alert("Error in searching surveys");
+    }
+  );
+
+}
+}
 

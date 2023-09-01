@@ -9,10 +9,10 @@ import { LoginService } from 'src/app/services/login.service';
 export class ProfileComponent  implements OnInit{
 
   user: any;
-  constructor(private login:LoginService){}
+  constructor(private loginService:LoginService){}
 
   ngOnInit(): void {
-    this.user=this.login.getUser();  
+    this.user=this.loginService.getUser();  
   }
 
 }

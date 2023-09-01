@@ -1,13 +1,9 @@
-<div class=" mt20 ml20">
-    <input class="form-control search-input"
-    type="text"
-    placeholder="search"
-    [(ngModel)]="searchText"
-    >
-
+<h1 style="color:#7E7467; font-weight: bold;" class="mt20 ml20">All Quizzes</h1>
+<div class="search-bar mt10 ml20">
+    <input class="search-input" type="text" [(ngModel)]="keyword" (input)="performSearch()" placeholder="Search surveys by title">
 </div>
 
-<mat-card  class="mt10 mr20 ml20"  *ngFor="let s of surveys | search: searchText">
+<mat-card  class="mt10 mr20 ml20"  *ngFor="let s of surveys">
     
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>

@@ -53,4 +53,9 @@ export class SurveyService {
   {
     return this._http.get(`${this.baseUrl}/survey/category/active/${cid}`);
   }
+
+  //serach surveys
+  public searchSurveys(keyword: string) {
+    return this._http.get(`${this.baseUrl}/survey/search`, { params: { keyword } });
+}
 }

@@ -19,7 +19,7 @@ export class LoginComponent {
   roles:any;
   
 
-  constructor(private snack: MatSnackBar, private login: LoginService,private router:Router) {}
+  constructor(private snack: MatSnackBar, private loginService: LoginService,private router:Router) {}
 
   formSubmit() {
     console.log("login btn clicked");
@@ -39,12 +39,12 @@ export class LoginComponent {
       return;
     }
 
-    this.login.generateToken(this.loginData).subscribe({
+    this.loginService.generateToken(this.loginData).subscribe({
       next: (res:any) => {
         console.log('res',res);
-        this.login.saveTokenAndUser(res.token, res);
-        console.log(this.login.getToken());
-        console.log(this.login.getUser())
+        this.loginService.saveTokenAndUser(res.token, res);
+        console.log(this.loginService.getToken());
+        console.log(this.loginService.getUser())
         
         
         const userRoles = res.roles; 
@@ -56,7 +56,7 @@ export class LoginComponent {
           
           this.router.navigate(['user-dashboard/0']);
         }else{
-          this.login.logout();
+          this.loginService.logout();
 
         }
       },
